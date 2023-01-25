@@ -17,10 +17,10 @@ Clone the Main branch
 1. I tested the url qr code section of the qr monkey website
 2. From my perspective, it seems the page is a teaser for users to easily see, use, verify the possibilities, and more importantly, be converted to signed up and consequently, paying users. So I implemented the following tests
 
-Verifying that the URL QR codes can be generated and lead to the correct link when decoded
-verifying that the signUp prompts lead to the signup Modal and subsequently to signup page
-Verifying that users can sign up with minimal data
-Verifying that users sign up with maximal data
+- Verifying that the URL QR codes can be generated and lead to the correct link when decoded
+- verifying that the signUp prompts lead to the signup Modal and subsequently to signup page
+- Verifying that users can sign up with minimal data
+- Verifying that users sign up with maximal data
 
 # Difficulties faced
 
