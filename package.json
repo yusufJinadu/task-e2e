@@ -1,0 +1,28 @@
+{
+  "name": "bitly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ui:test:en": "cypress open --env lang='en'",
+    "ui:test:de": "cypress open --env lang='de'",
+    "prepare": "husky install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nuintun/qrcode": "^3.3.0",
+    "cypress": "^12.3.0",
+    "cypress-downloadfile": "^1.2.3"
+  },
+  "devDependencies": {
+    "cypress-wait-until": "^1.7.2",
+    "eslint": "^8.32.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,json}": ["eslint . --fix", "prettier --write ."]
+  }
+}

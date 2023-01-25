@@ -1,0 +1,12 @@
+{
+    "url":"https://www.github.com",
+    "colours":{
+        "foreColour":"#944141",
+        "background":"#30992D"
+    },
+    "details":{
+        "industry":"Tourism",
+        "password":"Sample123",
+        "printMaterial":"Books"
+    }
+}
