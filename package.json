@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "ui:test:en": "cypress open --env lang='en'",
-    "ui:test:de": "cypress open --env lang='de'",
-    "prepare": "husky install"
+    "ui:test:de": "cypress open --env lang='de'"
   },
   "author": "",
   "license": "ISC",
