@@ -41,3 +41,4 @@ Clone the Main branch
 5. Verifying that downloaded qr code files redirect to expected link (not currently implemented because of cypress download issue)
 6. Verify that users can complete sign up (Could be implemented with an email tool e.g. mailosaur)
 7. Verifying that all of the other signup modals lead to the sign up page (One function would have been sufficient if only one modal was in the DOM at every point in time)
+8. Checking that it is not possible to login with existing emaail
