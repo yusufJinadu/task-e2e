@@ -27,7 +27,7 @@ describe(
 				})
 		it("User can create and verify non customized URL QR codes", function () {
 			cy.visit(`${Cypress.env('qrMonkeyUrl')}/${lang}`)
-			cy.get(cookieBanner.getAcceptCookieBannerButtons()).click()
+			cy.get(cookieBanner.getAcceptCookieBannerButton()).click()
 			urlPage.createURLQRCode(this.url )
 			verifyURLQRCode(this.url)
 		});
