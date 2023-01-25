@@ -68,6 +68,9 @@ export default class SignUpPage {
     }
     cy.get(this.getTermsAndConditions()).click();
     cy.get(this.getButtons()).contains('Sign up now').click();
-    cy.url().should('contain', 'ok');
+    cy.url().should(
+      'include',
+      `${Cypress.env('qrGeneratorLoginUrl') + this.getRoute()}/ok/`,
+    );
   }
 }
