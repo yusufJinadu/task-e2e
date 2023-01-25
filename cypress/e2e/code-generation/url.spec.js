@@ -13,7 +13,7 @@ const fixture = 'code-generation/url';
 const downloadsPath = './cypress/downloads';
 const lang = Cypress.env('lang');
 
-describe('User should be able to generate and verify  URL QR Codes', function () {
+describe('Verify some essential functionalities of the URL section in the qr monkey website', function () {
   beforeEach(function () {
     cy.task('deleteDownloads', downloadsPath);
     cy.fixture(fixture).then(function ({ url, colours, details }) {
