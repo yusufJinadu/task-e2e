@@ -17,17 +17,17 @@ describe(
 	'User should be able to generate and verify  URL QR Codes',
 	function () {
 		
-		beforeEach(function(){
-			cy.task('deleteDownloads',downloadsPath)
-			cy.fixture(fixture).then(function({url,colours,details}){
-				this.url = url
-				this.colours=colours
-				this.details = details
-			})
-		})
-		it('User can create and verify non customized URL QR codes', function () {
+				beforeEach(function(){
+					cy.task('deleteDownloads',downloadsPath)
+					cy.fixture(fixture).then(function({url,colours,details}){
+						this.url = url
+						this.colours=colours
+						this.details = details
+					})
+				})
+		it("User can create and verify non customized URL QR codes", function () {
 			cy.visit(`${Cypress.env('qrMonkeyUrl')}/${lang}`)
-			cy.get(cookieBanner.getAcceptCookieBannerButton()).click()
+			cy.get(cookieBanner.getAcceptCookieBannerButtons()).click()
 			urlPage.createURLQRCode(this.url )
 			verifyURLQRCode(this.url)
 		});
