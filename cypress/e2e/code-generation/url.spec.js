@@ -24,7 +24,7 @@ describe('User should be able to generate and verify  URL QR Codes', function ()
   });
   it('User can create and verify non customized URL QR codes', function () {
     cy.visit(`${Cypress.env('qrMonkeyUrl')}/${lang}`);
-    cy.get(cookieBanner.getAcceptCookieBannerButtons()).click();
+    cy.get(cookieBanner.getAcceptCookieBannerButton()).click();
     urlPage.createURLQRCode(this.url);
     verifyURLQRCode(this.url);
   });
@@ -36,6 +36,7 @@ describe('User should be able to generate and verify  URL QR Codes', function ()
       colours: this.colours,
       logo: { class: '.sprite-logo-instagram-circle' },
     });
+    // commented out because the used plugin is unable to decode the customized qr code
     //verifyURLQRCode(this.url)
   });
 
@@ -44,6 +45,12 @@ describe('User should be able to generate and verify  URL QR Codes', function ()
     signUpModal.goToSignUpPage();
     goToSignupModalFromStatisticsSwitch(false);
     signUpModal.goToSignUpPage('image');
+    cy.origin(`${Cypress.env('qrGeneratorLoginUrl')}`, () => {
+      cy.url().should(
+        'include',
+        `${Cypress.env('qrGeneratorLoginUrl') + '/signup'}`,
+      );
+    });
   });
 
   it('User can Sign up with maximal details', function () {
@@ -68,10 +75,7 @@ function goToSignupModalFromStatisticsSwitch(firstTime = true) {
   cy.get(signUpModal.getModalContent()).should('exist');
 }
 
-export function verifyURLQRCode(
-  url,
-  { downloadsPath = './cypress/downloads' } = {},
-) {
+function verifyURLQRCode(url, { downloadsPath = './cypress/downloads' } = {}) {
   cy.waitUntil(() =>
     cy
       .get(urlPage.getQRImage())

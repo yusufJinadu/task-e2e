@@ -6,6 +6,8 @@
   "scripts": {
     "ui:test:en": "cypress open --env lang='en'",
     "ui:test:de": "cypress open --env lang='de'",
+    "test:en": "cypress run --env lang='en'",
+    "test:de": "cypress run --env lang='de'",
     "prepare": "husky install"
   },
   "author": "",
